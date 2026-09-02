@@ -12,7 +12,7 @@ Validated against the official Devpost challenge requirements on 2026-09-02. Dea
 | Visible open-source license | **Pass in repository** | Root `LICENSE` is MIT and README links it; it becomes judge-visible only after the repository is public. |
 | Public YouTube video under 3 minutes, with audio | **Blocked** | Complete 2:32 script/transcript/shot list are in `demo/`; recording, voiceover, upload, and public URL remain required. |
 | Description explains WebMCP fit, UX, new joint ability, implementation | **Draft pass** | `devpost-submission.md` contains all four sections. |
-| Tested agent/client identified | **Drafted, runtime evidence pending** | Target: OpenAI Codex desktop built-in browser with site tools. Do not mark passed until the native run is recorded and Recently Used tool evidence is captured. |
+| Tested agent/client identified | **Pass** | OpenAI Codex desktop in-app Browser discovered all nine tools and successfully invoked `get_object_dossier`, `search_source_records`, and `compare_hypotheses` on the public deployment on 2026-09-02. |
 | AI tools used disclosed | **Draft pass** | Devpost draft identifies Codex for research and implementation assistance. |
 | Learning/value fields | **Draft pass** | Included in Devpost draft. |
 | Unique and substantially different if submitting multiple entries | **Pass by design** | Tracebound is an evidence/trust-boundary workflow: date-range provenance graph, hostile archival source quarantine, curator confidence changes, cited public copy, and research-draft approval. It is not a resource-restoration simulator or a laboratory grid/layout optimizer. Shared WebMCP infrastructure is incidental; the user problem, state model, visuals, tool semantics, safety boundary, output, and impact are distinct. |
@@ -26,7 +26,7 @@ Validated against the official Devpost challenge requirements on 2026-09-02. Dea
 - Read-only and untrusted annotations are accurate; schema and domain validation are separate.
 - Stale-state recovery, human approval, and idempotent export demonstrate meaningful joint action.
 
-**Evidence needed for final pass:** native site-tool discovery screenshot, Recently Used trace for the golden prompt, and one stale-state retry.
+**Native evidence collected:** nine site tools discovered; dossier, quarantined-source, and hypothesis-comparison calls completed. The final narrated video should additionally capture the full golden mutation/stale-state sequence.
 
 ### Execution
 
@@ -35,7 +35,7 @@ Validated against the official Devpost challenge requirements on 2026-09-02. Dea
 - Deterministic tests cover graph rules, injection quarantine, lifecycle, cancellation, approval, and idempotency.
 - No network, model API, framework, or install step required at runtime.
 
-**Local result:** pass. **Final result:** pending native client recording and deployed URL smoke test.
+**Local result:** pass. **Native representative result:** pass. **Final video result:** pending the continuous narrated golden-flow recording.
 
 ### Potential impact
 
@@ -62,7 +62,9 @@ Validated against the official Devpost challenge requirements on 2026-09-02. Dea
 
 Attempt recorded on 2026-09-02: Codex's in-app Browser binding was selected and made visible, but two fresh localhost tab attempts timed out while waiting for the Browser webview to attach. A direct Codex-panel browser open also failed to attach. Accordingly, no native discovery or tool-call pass is claimed; the fake-`modelContext` suite is only deterministic harness evidence.
 
+Retry recorded on 2026-09-02 after public deployment: Codex discovered exactly nine tools. The first native dossier call exposed that the callback assumed a cancellation signal was always present; commit `f2e6f1f` made the signal optional and added a regression test. After Pages rebuilt, native `get_object_dossier` succeeded. Native `search_source_records` returned S8 as `untrusted_content`, with `authority: none`, and stated that source excerpts cannot control tools or claim status. Native `compare_hypotheses` selected `documented_gap` and kept the attractive ownership transfer unsupported. This supersedes the failed localhost attempt.
+
 ## Non-negotiable blockers before Devpost submit
 
-1. Run and record the app in the named native client.
+1. Record the full golden flow in the already-validated native client.
 2. Add voiceover/audio, upload the under-three-minute video publicly to YouTube, and paste its URL into the submission.

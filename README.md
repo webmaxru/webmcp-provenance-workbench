@@ -78,7 +78,7 @@ This is a fictional research aid. It does not determine authenticity, legal titl
 
 ## Challenge status
 
-The app, local tests, public source repository, and [live GitHub Pages deployment](https://webmaxru.github.io/webmcp-provenance-workbench/) are complete. Native Codex validation and a public YouTube video with audio remain submission blockers. See [RULES-VALIDATION.md](RULES-VALIDATION.md) and [devpost-submission.md](devpost-submission.md).
+The app, local tests, public source repository, [live GitHub Pages deployment](https://webmaxru.github.io/webmcp-provenance-workbench/), and representative native Codex WebMCP validation are complete. A public YouTube video with audio remains the principal submission blocker. See [RULES-VALIDATION.md](RULES-VALIDATION.md) and [devpost-submission.md](devpost-submission.md).
 
 ## License
 

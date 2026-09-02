@@ -84,7 +84,7 @@ Future work could add archive connectors, cryptographic artifact signatures, ins
 
 ## Tested agent/client
 
-Target: **OpenAI Codex desktop built-in browser with site tools, GPT-5.6 Sol or Terra**. **Native acceptance evidence pending.** Deterministic registration and behavior are locally tested with a fake `modelContext`; this is not a substitute for the recorded native run.
+**OpenAI Codex desktop in-app Browser with site tools: passed on 2026-09-02.** Exactly nine tools were discovered from the public deployment. Native calls successfully read the dossier, quarantined S8 as untrusted content with no authority, and compared the two hypotheses while preserving the documented gap. Deterministic registration and behavior are also locally tested with a fake `modelContext`.
 
 ## AI tools used
 
