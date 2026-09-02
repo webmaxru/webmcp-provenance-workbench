@@ -1,0 +1,12 @@
+{
+  "name": "webmcp-provenance-workbench",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node scripts/serve.mjs",
+    "test": "node --test",
+    "check": "node --check src/app.js && node --check src/domain.js && node --check src/webmcp.js"
+  },
+  "license": "MIT"
+}

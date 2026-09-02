@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="A synthetic, evidence-bound provenance research workbench with WebMCP site tools." />
+    <title>Tracebound — Provenance Workbench</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#workspace">Skip to workspace</a>
+    <header class="masthead">
+      <div>
+        <p class="eyebrow">Synthetic research case · WebMCP challenge demo</p>
+        <h1>Tracebound</h1>
+        <p class="lede">Evidence before certainty. A curator and an agent share one inspectable provenance graph.</p>
+      </div>
+      <aside class="runtime" aria-label="WebMCP status">
+        <span id="tool-dot" class="status-dot"></span>
+        <div><strong id="tool-status">Checking site tools…</strong><small id="tool-detail">9 imperative tools expected</small></div>
+      </aside>
+    </header>
+
+    <nav class="command-bar" aria-label="Demo controls">
+      <button id="build-demo" class="primary">Build strongest supported chain</button>
+      <button id="prepare-label">Prepare cited label</button>
+      <button id="reset-demo" class="quiet">Reset case</button>
+      <span id="state-chip" class="state-chip">v1 · intake</span>
+    </nav>
+
+    <main id="workspace">
+      <section class="object-card panel" aria-labelledby="object-title">
+        <div class="painting" role="img" aria-label="Abstract placeholder for fictional 1912 painting"><span>1912</span></div>
+        <div>
+          <p class="eyebrow">Object PHM-1978-44</p>
+          <h2 id="object-title">Evening Bridges, Prague</h2>
+          <p>Mira Kovář · oil on canvas · 62 × 48 cm</p>
+          <div class="marks"><span>Novak inventory N-36-17</span><span>reverse stamp Δ7</span></div>
+        </div>
+        <p class="disclaimer">Synthetic training case. This tool organizes evidence and drafts research language; it does not determine authenticity, legal title, ethical ownership, or restitution.</p>
+      </section>
+
+      <section class="panel timeline-panel" aria-labelledby="timeline-title">
+        <div class="section-heading"><div><p class="eyebrow">Ownership timeline</p><h2 id="timeline-title">What the records can support</h2></div><span id="coverage-pill" class="pill warning">0 claims mapped</span></div>
+        <div id="timeline" class="timeline" aria-live="polite"></div>
+        <div id="gap-banner" class="gap-banner">1939–1943 remains undocumented. The workbench will not invent an owner.</div>
+      </section>
+
+      <div class="columns">
+        <section class="panel" aria-labelledby="sources-title">
+          <div class="section-heading"><div><p class="eyebrow">Source inbox</p><h2 id="sources-title">Eight mocked records</h2></div><span class="pill">bounded dataset</span></div>
+          <div id="sources" class="source-list"></div>
+        </section>
+
+        <section class="panel graph-panel" aria-labelledby="graph-title">
+          <div class="section-heading"><div><p class="eyebrow">Evidence graph</p><h2 id="graph-title">Claims must cite records</h2></div><span id="graph-hash" class="mono">empty</span></div>
+          <div id="graph" class="graph" aria-live="polite"></div>
+          <div class="issues"><h3>Gaps & contradictions</h3><ul id="issues"></ul></div>
+        </section>
+      </div>
+
+      <div class="columns lower">
+        <section class="panel" aria-labelledby="draft-title">
+          <div class="section-heading"><div><p class="eyebrow">Evidence-bound copy</p><h2 id="draft-title">Public label draft</h2></div><span id="draft-hash" class="mono">not prepared</span></div>
+          <div id="draft" class="draft empty">Map the evidence before drafting.</div>
+          <div class="approval-box">
+            <label class="approval-check"><input id="approval-check" type="checkbox" /> I reviewed this exact draft and evidence graph.</label>
+            <button id="approve-draft" class="primary" disabled>Approve as research draft</button>
+            <button id="export-draft" disabled>Export approved packet</button>
+            <p id="approval-status" class="microcopy">Approval is page-held, single-use, and revoked by any graph change.</p>
+          </div>
+          <div id="receipt" class="receipt hidden"></div>
+        </section>
+
+        <section class="panel" aria-labelledby="activity-title">
+          <div class="section-heading"><div><p class="eyebrow">Attributable activity</p><h2 id="activity-title">Human + agent ledger</h2></div><span id="ledger-count" class="pill">0 events</span></div>
+          <ol id="ledger" class="ledger" aria-live="polite"></ol>
+        </section>
+      </div>
+    </main>
+    <footer><span>Tracebound · MIT licensed</span><span>No real objects, institutions, or ownership allegations.</span></footer>
+    <script type="module" src="src/app.js"></script>
+  </body>
+</html>
