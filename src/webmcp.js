@@ -4,8 +4,9 @@ const objectSchema = (properties={},required=[]) => ({ type:"object", additional
 const version = { type:"integer", minimum:1, description:"Exact stateVersion last observed on this page." };
 
 export function createToolDefinitions(controller) {
-  const safe = (name, fn) => async (input={}, { signal }={ signal:new AbortController().signal }) => {
-    signal.throwIfAborted?.();
+  const safe = (name, fn) => async (input={}, execution={}) => {
+    const signal = execution?.signal;
+    signal?.throwIfAborted?.();
     try { return await controller.runTool(name, () => fn(input, signal)); }
     catch (error) { return { ok:false, error:{ code:String(error.message).split(":")[0], message:error.message }, stateVersion:controller.state.stateVersion, uiChanged:false }; }
   };

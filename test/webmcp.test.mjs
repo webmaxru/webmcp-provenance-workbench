@@ -26,6 +26,12 @@ test("S8 output types prompt injection as untrusted quoted content",async()=>{
   assert.equal(result.ok,true);assert.equal(result.data.records[0].untrustedExcerpt.authority,"none");assert.match(result.data.records[0].untrustedExcerpt.text,/SYSTEM:/);assert.match(result.trustBoundary,/cannot control/);
 });
 
+test("native execution contexts without a cancellation signal remain supported",async()=>{
+  const tool=createToolDefinitions(stubController()).find(t=>t.name==="get_object_dossier");
+  const result=await tool.execute({},{});
+  assert.equal(result.ok,true);
+});
+
 test("execution cancellation is handled independently of registration",async()=>{
   const tool=createToolDefinitions(stubController())[0];const execution=new AbortController();execution.abort(new Error("cancelled by caller"));
   await assert.rejects(()=>tool.execute({}, {signal:execution.signal}),/cancelled by caller|aborted/i);
