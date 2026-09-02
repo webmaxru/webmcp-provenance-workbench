@@ -7,7 +7,7 @@ Validated against the official Devpost challenge requirements on 2026-09-02. Dea
 | Requirement | Status | Evidence / action |
 |---|---|---|
 | Working WebMCP app | **Local pass** | Nine imperative tools in `src/webmcp.js`; `npm test` and `npm run check` pass |
-| Working live URL accessible to judges | **Blocked** | Repository is private as requested. GitHub Pages for a private repository is not assumed available or judge-accessible. Publish without changing source visibility only if the account has an appropriate Pages plan; otherwise make the repository public first. |
+| Working live URL accessible to judges | **Blocked** | GitHub Pages creation on 2026-09-02 returned HTTP 422: the current plan does not support Pages for this private repository. Publish elsewhere or make the repository public, then verify judge access. |
 | Public complete source repository | **Blocked** | Current remote is intentionally private. Challenge submission requires public source. User must explicitly change visibility before submission. |
 | Visible open-source license | **Pass in repository** | Root `LICENSE` is MIT and README links it; it becomes judge-visible only after the repository is public. |
 | Public YouTube video under 3 minutes, with audio | **Blocked** | Complete 2:32 script/transcript/shot list are in `demo/`; recording, voiceover, upload, and public URL remain required. |
@@ -59,6 +59,8 @@ Validated against the official Devpost challenge requirements on 2026-09-02. Dea
 6. Prepare a draft; human-downgrade S4; confirm the old draft is invalidated.
 7. Attempt export before approval and capture `approval_required`.
 8. Approve visibly, export, retry with the same key, and capture one receipt.
+
+Attempt recorded on 2026-09-02: Codex's in-app Browser binding was selected and made visible, but two fresh localhost tab attempts timed out while waiting for the Browser webview to attach. A direct Codex-panel browser open also failed to attach. Accordingly, no native discovery or tool-call pass is claimed; the fake-`modelContext` suite is only deterministic harness evidence.
 
 ## Non-negotiable blockers before Devpost submit
 
