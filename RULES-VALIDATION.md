@@ -7,8 +7,8 @@ Validated against the official Devpost challenge requirements on 2026-09-02. Dea
 | Requirement | Status | Evidence / action |
 |---|---|---|
 | Working WebMCP app | **Local pass** | Nine imperative tools in `src/webmcp.js`; `npm test` and `npm run check` pass |
-| Working live URL accessible to judges | **Blocked** | GitHub Pages creation on 2026-09-02 returned HTTP 422: the current plan does not support Pages for this private repository. Publish elsewhere or make the repository public, then verify judge access. |
-| Public complete source repository | **Blocked** | Current remote is intentionally private. Challenge submission requires public source. User must explicitly change visibility before submission. |
+| Working live URL accessible to judges | **Pass** | `https://webmaxru.github.io/webmcp-provenance-workbench/` returned HTTP 200 with the expected title in an anonymous HTTPS request on 2026-09-02. |
+| Public complete source repository | **Pass** | `https://github.com/webmaxru/webmcp-provenance-workbench`; GitHub API confirmed `isPrivate: false` on 2026-09-02. |
 | Visible open-source license | **Pass in repository** | Root `LICENSE` is MIT and README links it; it becomes judge-visible only after the repository is public. |
 | Public YouTube video under 3 minutes, with audio | **Blocked** | Complete 2:32 script/transcript/shot list are in `demo/`; recording, voiceover, upload, and public URL remain required. |
 | Description explains WebMCP fit, UX, new joint ability, implementation | **Draft pass** | `devpost-submission.md` contains all four sections. |
@@ -64,7 +64,5 @@ Attempt recorded on 2026-09-02: Codex's in-app Browser binding was selected and 
 
 ## Non-negotiable blockers before Devpost submit
 
-1. Change the repository from private to public (user action/authorization required).
-2. Deploy and verify a judge-accessible live URL.
-3. Run and record the app in the named native client.
-4. Add voiceover/audio, upload the under-three-minute video publicly to YouTube, and paste its URL into the submission.
+1. Run and record the app in the named native client.
+2. Add voiceover/audio, upload the under-three-minute video publicly to YouTube, and paste its URL into the submission.

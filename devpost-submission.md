@@ -12,8 +12,8 @@ An evidence-bound WebMCP workbench where agents map provenance without manufactu
 
 ## Links
 
-- Live app: **[required — not yet deployed]**
-- Public source: `https://github.com/webmaxru/webmcp-provenance-workbench` **[currently private; must become public]**
+- Live app: `https://webmaxru.github.io/webmcp-provenance-workbench/`
+- Public source: `https://github.com/webmaxru/webmcp-provenance-workbench`
 - Public YouTube demo: **[required — not yet recorded/uploaded]**
 
 ## Inspiration
