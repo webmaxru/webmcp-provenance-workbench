@@ -1,7 +1,11 @@
 # Submission screenshots
 
+> This project was created using the [WebMCP Agent Skill from the Web AI Agent Skills collection](https://github.com/webmaxru/web-ai-agent-skills).
+
 These intentionally tracked 16:9 PNGs are still frames from the ignored local
 `submission-video/final.mp4`. The video itself remains uncommitted.
+
+Published demo: [Tracebound — 2:01 Codex/WebMCP walkthrough](https://youtu.be/MAwLfQNHeoE).
 
 | File | Intended use | Suggested alt text |
 |---|---|---|
@@ -12,8 +16,7 @@ These intentionally tracked 16:9 PNGs are still frames from the ignored local
 
 Use the overview as the primary gallery image. Use the workflow and approval
 frames when explaining why WebMCP is central, then finish with the receipt
-frame. Do not present these stills as a substitute for the required public
-video.
+frame. The complete public walkthrough is linked above.
 
 No standalone social-card asset was added because this project has no existing
 social-card pattern; the overview PNG is the preferred share image.

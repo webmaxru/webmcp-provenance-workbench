@@ -15,8 +15,8 @@ An evidence-bound WebMCP workbench where agents map provenance without manufactu
 - Live app: `https://webmaxru.github.io/webmcp-provenance-workbench/`
   (must remain free and unrestricted through September 21, 2026 at 5:00 p.m. PT)
 - Public source: `https://github.com/webmaxru/webmcp-provenance-workbench`
-- Public YouTube demo: **[required — validated local 2:01 master complete; public upload pending]**
-- Upload-ready captions: `demo/demo-captions.srt`
+- Public YouTube demo: https://youtu.be/MAwLfQNHeoE
+- Caption source: `demo/demo-captions.srt`
 
 ## YouTube title and description
 

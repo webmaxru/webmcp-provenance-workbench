@@ -1,7 +1,7 @@
 # Recording shot list
 
 Companion to `demo-script.md` (beats, prompts, speed ramps) and `transcript.md` (voiceover).
-Target finished runtime **2:31**, hard ceiling **2:40** with audio, uploaded publicly to YouTube.
+Published final runtime: **2:01**, with audio and under the three-minute limit. [Watch on YouTube](https://youtu.be/MAwLfQNHeoE).
 
 ## Operator setup — environment prep, before the first frame (Codex session NOT started yet)
 
@@ -94,5 +94,4 @@ the 2:40 ceiling.
 - Audio: normalise voiceover to about −16 LUFS; no music under the injection and approval beats.
 - Final pass against `demo-script.md` accuracy guardrails: nine tools, unresolved interval **1939–1945**,
   no authenticity/title/restitution claims, no invented capability.
-- Confirm the finished file is **under 2:40** (target 2:31), has audible narration, and is public on
-  YouTube before the submission link is pasted into Devpost.
+- Published final: **2:01**, with audible narration and a public [YouTube URL](https://youtu.be/MAwLfQNHeoE).

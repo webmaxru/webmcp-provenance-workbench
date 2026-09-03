@@ -1,5 +1,7 @@
 # Tracebound
 
+> This project was created using the [WebMCP Agent Skill from the Web AI Agent Skills collection](https://github.com/webmaxru/web-ai-agent-skills).
+
 Tracebound is a synthetic cultural-object provenance workbench built for the WebMCP Challenge. A curator and a browser agent share one visible, versioned evidence graph: the agent can map source-linked events, test gaps and contradictions, and prepare a cited label, while the page deterministically prevents unsupported certainty.
 
 The result is deliberately not “the mystery is solved.” It preserves the unresolved 1939–1945 gap, quarantines a prompt injection embedded in source S8, and records which judgments came from the human versus the agent.
@@ -70,7 +72,7 @@ src/webmcp.js              imperative tool contracts and lifecycle
 src/app.js                 shared human/agent controller and UI rendering
 test/                      Node domain and fake-modelContext tests
 evals/                     natural-language routing and safety cases
-demo/                      recording script, transcript, shot list, and upload-ready demo/demo-captions.srt
+demo/                      recording script, transcript, shot list, and final captions
 ```
 
 ## Security and ethical scope
@@ -93,12 +95,9 @@ recommended use and accessible alt text.
 - [Visible approval boundary](submission-assets/screenshots/03-approval-boundary.png)
 - [Confirmed export receipt](submission-assets/screenshots/04-confirmed-receipt.png)
 
-Use [`demo/demo-captions.srt`](demo/demo-captions.srt) as the upload-ready
-caption track for the final submission video.
-
 ## Challenge status
 
-The app, local tests, [public source repository](https://github.com/webmaxru/webmcp-provenance-workbench), [live GitHub Pages deployment](https://webmaxru.github.io/webmcp-provenance-workbench/), and representative native Codex WebMCP validation are complete. The live app must remain free and unrestricted through **September 21, 2026 at 5:00 p.m. PT**. A validated 2:01 narrated final master exists only in ignored `submission-video/`; its public YouTube URL remains the principal submission blocker. See [RULES-VALIDATION.md](RULES-VALIDATION.md) and [devpost-submission.md](devpost-submission.md).
+The app, local tests, [public source repository](https://github.com/webmaxru/webmcp-provenance-workbench), [live GitHub Pages deployment](https://webmaxru.github.io/webmcp-provenance-workbench/), published [2:01 Codex demo](https://youtu.be/MAwLfQNHeoE), and representative native WebMCP validation are complete. The live app must remain free and unrestricted through **September 21, 2026 at 5:00 p.m. PT**. Only entrant-specific fields and final Devpost submission remain. See [RULES-VALIDATION.md](RULES-VALIDATION.md) and [devpost-submission.md](devpost-submission.md).
 
 ## License
 

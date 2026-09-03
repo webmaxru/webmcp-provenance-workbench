@@ -9,8 +9,8 @@ Validated against the official Devpost challenge requirements on 2026-09-02. Dea
 | Working WebMCP app | **Local pass** | Nine imperative tools in `src/webmcp.js`; `npm test` and `npm run check` pass |
 | Working live URL accessible to judges | **Pass** | `https://webmaxru.github.io/webmcp-provenance-workbench/` returned HTTP 200 with the expected title in an anonymous HTTPS request on 2026-09-02. It must remain free and unrestricted through September 21, 2026 at 5:00 p.m. PT. |
 | Public complete source repository | **Pass** | `https://github.com/webmaxru/webmcp-provenance-workbench`; GitHub API confirmed `isPrivate: false` on 2026-09-02. |
-| Visible open-source license | **Pass in repository** | Root `LICENSE` is MIT and README links it; it becomes judge-visible only after the repository is public. |
-| Public YouTube video under 3 minutes, with audio | **Blocked** | A validated 2:01 narrated final master exists only in ignored `submission-video/`; public YouTube upload and URL remain required. |
+| Visible open-source license | **Pass** | The public repository includes a root MIT `LICENSE`, detected by GitHub. |
+| Public YouTube video under 3 minutes, with audio | **Pass** | Published [2:01 narrated demo](https://youtu.be/MAwLfQNHeoE); the exact-master caption source remains at `demo/demo-captions.srt`. |
 | Description explains WebMCP fit, UX, new joint ability, implementation | **Draft pass** | `devpost-submission.md` contains all four sections. |
 | Tested agent/client identified | **Pass** | OpenAI Codex desktop in-app Browser discovered all nine tools and successfully invoked `get_object_dossier`, `search_source_records`, and `compare_hypotheses` on the public deployment on 2026-09-02. |
 | AI tools used disclosed | **Draft pass** | Devpost draft identifies Codex for research and implementation assistance. |
@@ -35,7 +35,7 @@ Validated against the official Devpost challenge requirements on 2026-09-02. Dea
 - Deterministic tests cover graph rules, injection quarantine, lifecycle, cancellation, approval, and idempotency.
 - No network, model API, framework, or install step required at runtime.
 
-**Local result:** pass. **Native representative result:** pass. **Final video result:** validated local master complete; public YouTube publication pending.
+**Local result:** pass. **Native representative result:** pass. **Final video result:** public [2:01 narrated demo](https://youtu.be/MAwLfQNHeoE).
 
 ### Potential impact
 
@@ -66,7 +66,7 @@ Attempt recorded on 2026-09-02: Codex's in-app Browser binding was selected and 
 
 Retry recorded on 2026-09-02 after public deployment: Codex discovered exactly nine tools. The first native dossier call exposed that the callback assumed a cancellation signal was always present; commit `f2e6f1f` made the signal optional and added a regression test. After Pages rebuilt, native `get_object_dossier` succeeded. Native `search_source_records` returned S8 as `untrusted_content`, with `authority: none`, and stated that source excerpts cannot control tools or claim status. Native `compare_hypotheses` selected `documented_gap` and kept the attractive ownership transfer unsupported. This supersedes the failed localhost attempt.
 
-## Non-negotiable blockers before Devpost submit
+## Remaining Devpost actions
 
-1. Upload the validated 2:01 narrated final master publicly to YouTube.
-2. Attach `demo/demo-captions.srt` and paste the public URL into the submission.
+1. Complete the entrant-specific fields using the verified live, source, and [video](https://youtu.be/MAwLfQNHeoE) links.
+2. Submit the completed entry before the deadline.
