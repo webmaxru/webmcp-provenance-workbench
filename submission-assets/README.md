@@ -2,10 +2,12 @@
 
 > This project was created using the [WebMCP Agent Skill from the Web AI Agent Skills collection](https://github.com/webmaxru/web-ai-agent-skills).
 
+**Project:** Tracebound — Provenance Research That Refuses to Invent History
+
 These intentionally tracked 16:9 PNGs are still frames from the ignored local
 `submission-video/final.mp4`. The video itself remains uncommitted.
 
-Published demo: [Tracebound — 2:01 Codex/WebMCP walkthrough](https://youtu.be/MAwLfQNHeoE).
+Published demo: [Tracebound — Provenance Research That Refuses to Invent History](https://youtu.be/MAwLfQNHeoE) (2:01 Codex/WebMCP walkthrough).
 
 | File | Intended use | Suggested alt text |
 |---|---|---|

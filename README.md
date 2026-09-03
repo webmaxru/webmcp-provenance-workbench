@@ -1,4 +1,4 @@
-# Tracebound
+# Tracebound — Provenance Research That Refuses to Invent History
 
 > This project was created using the [WebMCP Agent Skill from the Web AI Agent Skills collection](https://github.com/webmaxru/web-ai-agent-skills).
 
@@ -97,7 +97,7 @@ recommended use and accessible alt text.
 
 ## Challenge status
 
-The app, local tests, [public source repository](https://github.com/webmaxru/webmcp-provenance-workbench), [GitHub Pages deployment from this repository](https://webmaxru.github.io/webmcp-provenance-workbench/), published [2:01 Codex demo](https://youtu.be/MAwLfQNHeoE), and representative native WebMCP validation are complete. The live app must remain free and unrestricted through **September 21, 2026 at 5:00 p.m. PT**. Only entrant-specific fields and final Devpost submission remain. See [RULES-VALIDATION.md](RULES-VALIDATION.md) and [devpost-submission.md](devpost-submission.md).
+The app, local tests, [public source repository](https://github.com/webmaxru/webmcp-provenance-workbench), [GitHub Pages deployment from this repository](https://webmaxru.github.io/webmcp-provenance-workbench/), published [2:01 Codex demo](https://youtu.be/MAwLfQNHeoE), and representative native WebMCP validation are complete. The live app must remain free and unrestricted through **September 21, 2026 at 5:00 p.m. PT**. Only entrant-specific fields and final Devpost submission remain. See [RULES-VALIDATION.md](RULES-VALIDATION.md) and [SUBMISSION.md](SUBMISSION.md).
 
 ## License
 

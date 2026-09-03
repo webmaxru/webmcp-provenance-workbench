@@ -11,7 +11,7 @@ Validated against the official Devpost challenge requirements on 2026-09-02. Dea
 | Public complete source repository | **Pass** | `https://github.com/webmaxru/webmcp-provenance-workbench`; GitHub API confirmed `isPrivate: false` on 2026-09-02. |
 | Visible open-source license | **Pass** | The public repository includes a root MIT `LICENSE`, detected by GitHub. |
 | Public YouTube video under 3 minutes, with audio | **Pass** | Published [2:01 narrated demo](https://youtu.be/MAwLfQNHeoE); the exact-master caption source remains at `demo/demo-captions.srt`. |
-| Description explains WebMCP fit, UX, new joint ability, implementation | **Draft pass** | `devpost-submission.md` contains all four sections. |
+| Description explains WebMCP fit, UX, new joint ability, implementation | **Draft pass** | `SUBMISSION.md` contains all four sections. |
 | Tested agent/client identified | **Pass** | OpenAI Codex desktop in-app Browser discovered all nine tools and successfully invoked `get_object_dossier`, `search_source_records`, and `compare_hypotheses` on the public deployment on 2026-09-02. |
 | AI tools used disclosed | **Draft pass** | Devpost draft identifies Codex for research and implementation assistance. |
 | Learning/value fields | **Draft pass** | Included in Devpost draft. |

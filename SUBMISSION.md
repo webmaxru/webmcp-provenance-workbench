@@ -1,10 +1,8 @@
-# Devpost submission draft — Tracebound
+# Submission information
 
-> Draft only. Replace bracketed URLs and do not claim native validation until the recorded acceptance run passes.
+## Project name
 
-## Title
-
-Tracebound
+**Tracebound — Provenance Research That Refuses to Invent History**
 
 ## Tagline
 
