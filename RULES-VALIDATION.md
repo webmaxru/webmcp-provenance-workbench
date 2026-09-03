@@ -7,10 +7,10 @@ Validated against the official Devpost challenge requirements on 2026-09-02. Dea
 | Requirement | Status | Evidence / action |
 |---|---|---|
 | Working WebMCP app | **Local pass** | Nine imperative tools in `src/webmcp.js`; `npm test` and `npm run check` pass |
-| Working live URL accessible to judges | **Pass** | `https://webmaxru.github.io/webmcp-provenance-workbench/` returned HTTP 200 with the expected title in an anonymous HTTPS request on 2026-09-02. |
+| Working live URL accessible to judges | **Pass** | `https://webmaxru.github.io/webmcp-provenance-workbench/` returned HTTP 200 with the expected title in an anonymous HTTPS request on 2026-09-02. It must remain free and unrestricted through September 21, 2026 at 5:00 p.m. PT. |
 | Public complete source repository | **Pass** | `https://github.com/webmaxru/webmcp-provenance-workbench`; GitHub API confirmed `isPrivate: false` on 2026-09-02. |
 | Visible open-source license | **Pass in repository** | Root `LICENSE` is MIT and README links it; it becomes judge-visible only after the repository is public. |
-| Public YouTube video under 3 minutes, with audio | **Blocked** | Complete 2:32 script/transcript/shot list are in `demo/`; recording, voiceover, upload, and public URL remain required. |
+| Public YouTube video under 3 minutes, with audio | **Blocked** | A validated 2:01 narrated final master exists only in ignored `submission-video/`; public YouTube upload and URL remain required. |
 | Description explains WebMCP fit, UX, new joint ability, implementation | **Draft pass** | `devpost-submission.md` contains all four sections. |
 | Tested agent/client identified | **Pass** | OpenAI Codex desktop in-app Browser discovered all nine tools and successfully invoked `get_object_dossier`, `search_source_records`, and `compare_hypotheses` on the public deployment on 2026-09-02. |
 | AI tools used disclosed | **Draft pass** | Devpost draft identifies Codex for research and implementation assistance. |
@@ -26,7 +26,7 @@ Validated against the official Devpost challenge requirements on 2026-09-02. Dea
 - Read-only and untrusted annotations are accurate; schema and domain validation are separate.
 - Stale-state recovery, human approval, and idempotent export demonstrate meaningful joint action.
 
-**Native evidence collected:** nine site tools discovered; dossier, quarantined-source, and hypothesis-comparison calls completed. The final narrated video should additionally capture the full golden mutation/stale-state sequence.
+**Native evidence collected:** nine site tools discovered; dossier, quarantined-source, and hypothesis-comparison calls completed. The validated local narrated master additionally captures the golden mutation and stale-state sequence.
 
 ### Execution
 
@@ -35,7 +35,7 @@ Validated against the official Devpost challenge requirements on 2026-09-02. Dea
 - Deterministic tests cover graph rules, injection quarantine, lifecycle, cancellation, approval, and idempotency.
 - No network, model API, framework, or install step required at runtime.
 
-**Local result:** pass. **Native representative result:** pass. **Final video result:** pending the continuous narrated golden-flow recording.
+**Local result:** pass. **Native representative result:** pass. **Final video result:** validated local master complete; public YouTube publication pending.
 
 ### Potential impact
 
@@ -51,7 +51,9 @@ Validated against the official Devpost challenge requirements on 2026-09-02. Dea
 
 ## Native acceptance run
 
-1. Open the deployed top-level page in the target client.
+1. Open the deployed top-level page in the ChatGPT desktop in-app browser or
+   Google Chrome 149 or later with
+   `chrome://flags/#enable-webmcp-testing` enabled.
 2. Verify exactly nine available site tools and the `search_source_records` trust annotations.
 3. Run the golden prompt in `evals/prompts.md`.
 4. Confirm timeline, graph, ledger, and tool results agree.
@@ -66,5 +68,5 @@ Retry recorded on 2026-09-02 after public deployment: Codex discovered exactly n
 
 ## Non-negotiable blockers before Devpost submit
 
-1. Record the full golden flow in the already-validated native client.
-2. Add voiceover/audio, upload the under-three-minute video publicly to YouTube, and paste its URL into the submission.
+1. Upload the validated 2:01 narrated final master publicly to YouTube.
+2. Attach `demo/demo-captions.srt` and paste the public URL into the submission.

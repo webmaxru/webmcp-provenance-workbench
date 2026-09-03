@@ -2,7 +2,7 @@
 
 Tracebound is a synthetic cultural-object provenance workbench built for the WebMCP Challenge. A curator and a browser agent share one visible, versioned evidence graph: the agent can map source-linked events, test gaps and contradictions, and prepare a cited label, while the page deterministically prevents unsupported certainty.
 
-The result is deliberately not “the mystery is solved.” It preserves the unresolved 1939–1943 gap, quarantines a prompt injection embedded in source S8, and records which judgments came from the human versus the agent.
+The result is deliberately not “the mystery is solved.” It preserves the unresolved 1939–1945 gap, quarantines a prompt injection embedded in source S8, and records which judgments came from the human versus the agent.
 
 ## Why WebMCP
 
@@ -24,7 +24,10 @@ Requires Node.js 20+ and no installed dependencies.
 npm start
 ```
 
-Open <http://127.0.0.1:4173>. The normal human workflow works in any modern browser. For native WebMCP preview validation, use a compatible Chrome build in a secure visible window context with `chrome://flags/#enable-webmcp-testing` enabled, or open the app in a supported client with site tools enabled.
+Open <http://127.0.0.1:4173>. The normal human workflow works in any modern
+browser. For challenge WebMCP validation, use the ChatGPT desktop in-app browser
+or Google Chrome 149 or later in a secure visible window context with
+`chrome://flags/#enable-webmcp-testing` enabled.
 
 ```bash
 npm test
@@ -67,7 +70,7 @@ src/webmcp.js              imperative tool contracts and lifecycle
 src/app.js                 shared human/agent controller and UI rendering
 test/                      Node domain and fake-modelContext tests
 evals/                     natural-language routing and safety cases
-demo/                      recording script, transcript, and shot list
+demo/                      recording script, transcript, shot list, and upload-ready demo/demo-captions.srt
 ```
 
 ## Security and ethical scope
@@ -76,9 +79,26 @@ S8 demonstrates a source-borne prompt injection. `untrustedContentHint` is one l
 
 This is a fictional research aid. It does not determine authenticity, legal title, ethical ownership, or restitution. See [THREAT-MODEL.md](THREAT-MODEL.md).
 
+## Submission screenshots
+
+The repository includes four intentionally tracked 16:9 stills for judges who
+review the project without launching it. They cover the initial WebMCP surface,
+agent-driven evidence work, the visible approval boundary, and the final
+receipt. See [`submission-assets/README.md`](submission-assets/README.md) for
+recommended use and accessible alt text.
+
+![Tracebound overview showing nine registered WebMCP tools](submission-assets/screenshots/01-overview.png)
+
+- [Agent and tool workflow](submission-assets/screenshots/02-agent-tool-workflow.png)
+- [Visible approval boundary](submission-assets/screenshots/03-approval-boundary.png)
+- [Confirmed export receipt](submission-assets/screenshots/04-confirmed-receipt.png)
+
+Use [`demo/demo-captions.srt`](demo/demo-captions.srt) as the upload-ready
+caption track for the final submission video.
+
 ## Challenge status
 
-The app, local tests, public source repository, [live GitHub Pages deployment](https://webmaxru.github.io/webmcp-provenance-workbench/), and representative native Codex WebMCP validation are complete. A public YouTube video with audio remains the principal submission blocker. See [RULES-VALIDATION.md](RULES-VALIDATION.md) and [devpost-submission.md](devpost-submission.md).
+The app, local tests, [public source repository](https://github.com/webmaxru/webmcp-provenance-workbench), [live GitHub Pages deployment](https://webmaxru.github.io/webmcp-provenance-workbench/), and representative native Codex WebMCP validation are complete. The live app must remain free and unrestricted through **September 21, 2026 at 5:00 p.m. PT**. A validated 2:01 narrated final master exists only in ignored `submission-video/`; its public YouTube URL remains the principal submission blocker. See [RULES-VALIDATION.md](RULES-VALIDATION.md) and [devpost-submission.md](devpost-submission.md).
 
 ## License
 

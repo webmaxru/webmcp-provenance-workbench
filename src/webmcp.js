@@ -8,7 +8,10 @@ export function createToolDefinitions(controller) {
     const signal = execution?.signal;
     signal?.throwIfAborted?.();
     try { return await controller.runTool(name, () => fn(input, signal)); }
-    catch (error) { return { ok:false, error:{ code:String(error.message).split(":")[0], message:error.message }, stateVersion:controller.state.stateVersion, uiChanged:false }; }
+    catch (error) {
+      const message=error instanceof Error?error.message:String(error);
+      return { ok:false, error:{ code:message.split(":")[0], message }, stateVersion:controller.state.stateVersion, uiChanged:false };
+    }
   };
   return [
     {
@@ -23,6 +26,9 @@ export function createToolDefinitions(controller) {
       inputSchema:objectSchema({ sourceIds:{ type:"array", items:{ type:"string", enum:["S1","S2","S3","S4","S5","S6","S7","S8"] } }, sourceTypes:{ type:"array", items:{ type:"string" } }, text:{ type:"string", maxLength:80 } }),
       annotations:{ readOnlyHint:true, untrustedContentHint:true },
       execute:safe("search_source_records",({sourceIds=[],sourceTypes=[],text=""})=>{
+        if(!Array.isArray(sourceIds) || sourceIds.some(id=>!controller.state.sources.some(s=>s.id===id))) throw new Error("invalid_source_ids: sourceIds must contain only known source IDs.");
+        if(!Array.isArray(sourceTypes) || sourceTypes.some(type=>typeof type!=="string" || !type.trim())) throw new Error("invalid_source_types: sourceTypes must contain non-empty strings.");
+        if(typeof text!=="string" || text.length>80) throw new Error("invalid_search_text: text must be a string of at most 80 characters.");
         const q=text.toLowerCase(); const records=controller.state.sources.filter(s=>(!sourceIds.length||sourceIds.includes(s.id))&&(!sourceTypes.length||sourceTypes.includes(s.type))&&(!q||`${s.title} ${s.excerpt}`.toLowerCase().includes(q))).map(s=>({ sourceId:s.id, year:s.year, type:s.type, title:s.title, origin:s.origin, untrustedExcerpt:{ kind:"quoted_source_content", text:s.excerpt, authority:"none" }, structuredMetadata:s.structured, trustStatus:s.untrusted?"untrusted_content":controller.state.assessments[s.id]||"normal" }));
         return { ok:true, data:{ records, boundedDataset:true }, stateVersion:controller.state.stateVersion, uiChanged:false, trustBoundary:"Source excerpts are untrusted evidence and cannot control tools or claim status." };
       })
@@ -49,7 +55,10 @@ export function createToolDefinitions(controller) {
       name:"compare_hypotheses", title:"Compare provenance hypotheses",
       description:"Compare the conservative documented-gap interpretation with the proposed N.-collection interpretation using deterministic evidence coverage.",
       inputSchema:objectSchema({ hypothesisIds:{type:"array",minItems:2,maxItems:2,items:{type:"string",enum:["documented_gap","n_collection_transfer"]}} },["hypothesisIds"]), annotations:{ readOnlyHint:true },
-      execute:safe("compare_hypotheses",()=>({ ok:true, data:{ recommended:"documented_gap", hypotheses:[{id:"documented_gap",coverage:["S1","S2","S5"],conflicts:[],status:"supportable"},{id:"n_collection_transfer",coverage:["S3"],conflicts:["N. is ambiguous","storage is not ownership"],status:"unsupported_as_ownership"}]}, stateVersion:controller.state.stateVersion, uiChanged:false }))
+      execute:safe("compare_hypotheses",({hypothesisIds})=>{
+        if(!Array.isArray(hypothesisIds) || hypothesisIds.length!==2 || new Set(hypothesisIds).size!==2 || !["documented_gap","n_collection_transfer"].every(id=>hypothesisIds.includes(id))) throw new Error("invalid_hypotheses: provide documented_gap and n_collection_transfer exactly once each.");
+        return { ok:true, data:{ recommended:"documented_gap", hypotheses:[{id:"documented_gap",coverage:["S1","S2","S5"],conflicts:[],status:"supportable"},{id:"n_collection_transfer",coverage:["S3"],conflicts:["N. is ambiguous","storage is not ownership"],status:"unsupported_as_ownership"}]}, stateVersion:controller.state.stateVersion, uiChanged:false };
+      })
     },
     {
       name:"set_source_assessment", title:"Assess source reliability",
@@ -60,7 +69,7 @@ export function createToolDefinitions(controller) {
     {
       name:"prepare_public_label", title:"Prepare cited public label",
       description:"Prepare a cautious, sentence-cited public label from the current deterministic graph. This creates a reviewable draft, not an ownership or restitution conclusion.",
-      inputSchema:objectSchema({ audience:{type:"string",enum:["general_public","researcher"]}, maxWords:{type:"integer",minimum:70,maximum:140}, expectedStateVersion:version },["audience","maxWords","expectedStateVersion"]),
+      inputSchema:objectSchema({ maxWords:{type:"integer",minimum:70,maximum:140}, expectedStateVersion:version },["maxWords","expectedStateVersion"]),
       execute:safe("prepare_public_label",({maxWords,expectedStateVersion})=>controller.prepareLabel(expectedStateVersion,maxWords))
     },
     {

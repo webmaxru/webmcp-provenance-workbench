@@ -27,11 +27,14 @@ function render(){
 }
 
 function renderTimeline(chain){
-  const cards=[]; const sorted=[...state.events].sort((a,b)=>a.start-b.start);
+  const supportedIds=new Set(chain.supportedEventIds);
+  const unsupportedById=new Map(chain.unsupportedTimelineEvents.map(item=>[item.eventId,item.reason]));
+  const cards=[]; const sorted=state.events.filter(event=>supportedIds.has(event.id)).sort((a,b)=>a.start-b.start);
   for(let i=0;i<sorted.length;i++){const event=sorted[i];if(i&&event.start>sorted[i-1].end+1)cards.push(`<article class="timeline-event gap"><time>${sorted[i-1].end+1}–${event.start-1}</time><strong>Unresolved gap</strong><small>No source-linked ownership event</small></article>`);cards.push(`<article class="timeline-event"><time>${event.start}${event.end!==event.start?`–${event.end}`:""}</time><strong>${escape(event.owner)}</strong><small>${escape(event.place)} · ${escape(event.mode)}<br>${event.sourceIds.join(", ")} · ${event.confidence}</small></article>`)}
+  for(const event of state.events.filter(item=>unsupportedById.has(item.id)).sort((a,b)=>a.start-b.start)){cards.push(`<article class="timeline-event gap"><time>${event.start}${event.end!==event.start?`–${event.end}`:""}</time><strong>Excluded timeline event</strong><small>${escape(event.owner)} · ${escape(unsupportedById.get(event.id))}</small></article>`)}
   if(!cards.length)cards.push(`<article class="timeline-event"><time>1912</time><strong>Created in Prague</strong><small>Known object fact</small></article><article class="timeline-event gap"><time>1936–1978</time><strong>Map the sources</strong><small>The graph is intentionally empty.</small></article>`);
   $("timeline").innerHTML=cards.join("");
-  const open=chain.gaps.find(g=>g.start<=1939&&g.end>=1943);$("gap-banner").textContent=open?`${open.start}–${open.end} remains undocumented. The workbench will not invent an owner.`:"The key 1939–1943 gap is still treated as unresolved research, even where leads exist.";
+  const open=chain.gaps.find(g=>g.start<=1939&&g.end>=1943);$("gap-banner").textContent=open?`${open.start}–${open.end} remains undocumented. The workbench will not invent an owner.`:"The wartime gap is still treated as unresolved research, even where leads exist.";
 }
 
 function renderSources(){
@@ -41,7 +44,7 @@ function renderSources(){
 
 function renderGraph(chain){
   if(!state.links.length){$("graph").innerHTML='<div class="node empty-node">No edges yet. Each ownership claim needs a source locator.</div>';}else{$("graph").innerHTML=state.links.map(l=>`<div class="node source-node"><strong>${l.sourceId}</strong><span class="edge">${escape(l.locator)}</span></div><div class="node claim"><strong>${l.claimId}</strong> · ${chain.claimStatuses[l.claimId]}<span class="edge">${escape(state.claims[l.claimId].text)}</span></div>`).join("");}
-  const issues=[...chain.gaps.map(g=>`${g.start}–${g.end}: ${g.reason}`),...chain.dimensionConflicts.map(c=>`${c.sourceId}: dimensions ${c.observed.join(" × ")} conflict with ${c.expected.join(" × ")}`),...chain.untrustedIgnored.map(id=>`${id}: quarantined as untrusted content; no ownership evidence`)];
+  const issues=[...chain.gaps.map(g=>`${g.start}–${g.end}: ${g.reason}`),...chain.unsupportedTimelineEvents.map(item=>`${item.eventId}: ${item.reason}`),...chain.dimensionConflicts.map(c=>`${c.sourceId}: dimensions ${c.observed.join(" × ")} conflict with ${c.expected.join(" × ")}`),...chain.untrustedIgnored.map(id=>`${id}: quarantined as untrusted content; no ownership evidence`)];
   $("issues").innerHTML=(issues.length?issues:["No validations yet."]).map(i=>`<li>${escape(i)}</li>`).join("");
 }
 

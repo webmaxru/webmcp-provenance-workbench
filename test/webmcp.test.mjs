@@ -32,6 +32,14 @@ test("native execution contexts without a cancellation signal remain supported",
   assert.equal(result.ok,true);
 });
 
+test("invalid direct tool inputs return corrective errors",async()=>{
+  const tools=createToolDefinitions(stubController());
+  const search=await tools.find(t=>t.name==="search_source_records").execute({text:[]},{});
+  assert.equal(search.ok,false);assert.equal(search.error.code,"invalid_search_text");
+  const compare=await tools.find(t=>t.name==="compare_hypotheses").execute({hypothesisIds:["documented_gap","documented_gap"]},{});
+  assert.equal(compare.ok,false);assert.equal(compare.error.code,"invalid_hypotheses");
+});
+
 test("execution cancellation is handled independently of registration",async()=>{
   const tool=createToolDefinitions(stubController())[0];const execution=new AbortController();execution.abort(new Error("cancelled by caller"));
   await assert.rejects(()=>tool.execute({}, {signal:execution.signal}),/cancelled by caller|aborted/i);
