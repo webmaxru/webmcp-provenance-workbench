@@ -18,6 +18,29 @@ An evidence-bound WebMCP workbench where agents map provenance without manufactu
 - Public YouTube demo: **[required — validated local 2:01 master complete; public upload pending]**
 - Upload-ready captions: `demo/demo-captions.srt`
 
+## YouTube title and description
+
+**Title**
+
+`Tracebound: Can AI Admit What History Cannot Prove? | WebMCP`
+
+**Description**
+
+```text
+Fluent AI can make an incomplete history sound certain. In provenance research, that is a failure, not a feature.
+
+In this 2:01 Codex demo, Tracebound uses nine WebMCP tools to organize a fictional painting's evidence graph while the application enforces what each source can actually support. Codex quarantines a prompt injection embedded in a record, compares competing hypotheses, and preserves the unresolved 1939-1945 gap instead of inventing a transfer. A curator's source judgment invalidates stale prose, and export stays blocked until the exact evidence-bound draft is visibly approved.
+
+Tracebound is a deterministic research-organizing prototype. It does not decide authenticity, legal title, or restitution.
+
+Try it: https://webmaxru.github.io/webmcp-provenance-workbench/
+Source: https://github.com/webmaxru/webmcp-provenance-workbench
+
+Built for the WebMCP Challenge.
+
+#WebMCP #AIAgents #Provenance #Codex
+```
+
 ## Inspiration
 
 Provenance research combines incomplete dates, physical marks, archival records, competing interpretations, and human judgments about source quality. A browser agent can summarize text, but a trustworthy workflow needs more: every claim must retain its evidence, a missing interval must stay missing, and a sentence hidden inside a record must never become an instruction.
