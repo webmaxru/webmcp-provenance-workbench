@@ -1,0 +1,41 @@
+{
+  "plugin": "devpost-hackathon",
+  "version": 2,
+  "hackathon": {
+    "slug": "webmcp",
+    "name": "The WebMCP Challenge",
+    "url": "https://webmcp.devpost.com/",
+    "selected": true,
+    "source": "known"
+  },
+  "participant": {
+    "name": "",
+    "display_name": ""
+  },
+  "project": {
+    "name": "Tracebound — Provenance Research Without Inventing History",
+    "summary": "An evidence-bound WebMCP workbench where agents map provenance without manufacturing certainty.",
+    "ai_usage": "A browser agent uses page-hosted WebMCP tools to organize evidence; the running app uses deterministic rules and no model API.",
+    "codex_usage": "OpenAI Codex assisted with requirements research, WebMCP implementation, tests, interface code, and submission drafting."
+  },
+  "current_stage": "submit-project",
+  "completed_stages": [
+    "start-hackathon",
+    "review",
+    "resources",
+    "prepare-submission"
+  ],
+  "rules_acknowledged": true,
+  "learning": {
+    "status": "not-started",
+    "current_step": "",
+    "completed_steps": [],
+    "plan_file": "",
+    "checklist_file": ""
+  },
+  "submission": {
+    "draft_file": "devpost-submission.md",
+    "status": "ready"
+  },
+  "next_command": "submit-project"
+}
