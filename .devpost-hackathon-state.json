@@ -23,7 +23,8 @@
     "start-hackathon",
     "review",
     "resources",
-    "prepare-submission"
+    "prepare-submission",
+    "submit-project"
   ],
   "rules_acknowledged": true,
   "learning": {
@@ -35,7 +36,10 @@
   },
   "submission": {
     "draft_file": "devpost-submission.md",
-    "status": "ready"
+    "status": "submitted",
+    "project_id": 1416612,
+    "submission_id": 1170347,
+    "url": "https://devpost.com/software/tracebound-provenance-research-without-inventing-history"
   },
-  "next_command": "submit-project"
+  "next_command": "hackathon-map"
 }
